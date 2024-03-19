@@ -18,9 +18,9 @@ class UserConfirmationService
     public function countUsers(Request $request)
     {
         $count  = User::where('id', '>', 0);
-        if ($request->get('status') != "") {
-            $count->where('status', 'like', 'review');
-        }
+        //if ($request->get('status') != "") {
+        $count->where('status', 'like', 'review');
+        //}
         return $count->count();
     }
 
