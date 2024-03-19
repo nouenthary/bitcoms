@@ -52,7 +52,7 @@ $(function () {
         }
         $(".status").val(status);
         reloadTable();
-        setLocalStorage('id', '');
+        setLocalStorage("id", "");
     });
     // reload table
     function reloadTable() {
@@ -246,7 +246,7 @@ $(function () {
                 data: "id",
                 name: "id",
                 render: function (a, b, c) {
-                    if (c.uderconfirmid == null) {
+                    if (c.status.toLowerCase() === "review") {
                         let json = JSON.stringify(c);
                         return (
                             `<button class='btn btn-primary btn-xs btn-review' data-json='` +
