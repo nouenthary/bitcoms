@@ -1,0 +1,11 @@
+truncate table tblcointranfer;
+truncate table tblcontactus;
+truncate table tbldeposit;
+truncate table tbllogin;
+truncate table tblpermission;
+truncate table tbltradetitle;
+truncate table tbltrde;
+truncate table tblwallet;
+truncate table tblwallettitle;
+truncate table tblwidtraw;
+truncate table users;

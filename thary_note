@@ -1,0 +1,5 @@
+1 - composer require yajra/laravel-datatables-oracle
+    => install in root project
+2 - php artisan storage:link
+    => run in root project
+

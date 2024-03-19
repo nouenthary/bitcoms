@@ -1,0 +1,5 @@
+table tbluser => users
+    userid -> id
+    name -> name
+    email -> email
+    pass -> password
