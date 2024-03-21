@@ -1589,56 +1589,11 @@
 			@yield('content')
 
 
-			<!-- <div class="fb-send-to-messenger" messenger_app_id="560926601260763" page_id="106008288957042" data-ref="560926601260763"  color="blue" size="large">
-			</div>
-
-			<hr>
-			<p>
-				When it is clicked a unique Facebook Messenger Id will be created for the customer and your page and automatically
-				sent to
-				Dotdigital Omnichannel where a <b>fbMessengerId</b> field will be added to the profile you indicated using the
-				<b>data-ref</b>
-				field on the Send to Messenger control. You can now move onto the Facebook Messenger send message quick starts and
-				send messages
-				to the opted in profile <b>{{ 1  }}</b>
-			</p>
-
-			<div id="testButtons" style="display: none;">
-				<hr>
-				<p>Use the test buttons below to send test messages to Facebook</p>
-				<form id="buttonForm" method="POST">
-					<button name="Button" value="simple">Send Simple Test Message</button>
-					<button name="Button" value="rich">Send Rich Test Message</button>
-				</form>
-				<hr>
-			</div>
-
-		</div> -->
-
-
 			<div id="fb-root"></div>
+
+			<div id="fb-customer-chat" class="fb-customerchat"></div>
+
 			<script>
-				(function(d, s, id) {
-					var js, fjs = d.getElementsByTagName(s)[0];
-					if (d.getElementById(id)) return;
-					js = d.createElement(s);
-					js.id = id;
-					js.src = 'https://connect.facebook.net/fi_FI/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-					fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
-			</script>
-
-			<!-- Your customer chat code -->
-			<div class="fb-customerchat" attribution="setup_tool" page_id="106008288957042" greeting_dialog_display="hide">
-			</div>
-
-
-			<!-- <div id="fb-root"></div> -->
-
-
-			<!-- <div id="fb-customer-chat" class="fb-customerchat"></div> -->
-
-			<!-- <script>
 				var chatbox = document.getElementById('fb-customer-chat');
 				chatbox.setAttribute("page_id", "106008288957042");
 				chatbox.setAttribute("attribution", "biz_inbox");
@@ -1648,7 +1603,6 @@
 			<script>
 				window.fbAsyncInit = function() {
 					FB.init({
-						appId: '560926601260763',
 						xfbml: true,
 						version: "v2.6"
 					});
@@ -1662,7 +1616,7 @@
 					js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
 					fjs.parentNode.insertBefore(js, fjs);
 				}(document, 'script', 'facebook-jssdk'));
-			</script> -->
+			</script>
 
 			<!--**********************************
             Footer start
