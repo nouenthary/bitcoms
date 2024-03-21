@@ -1629,7 +1629,7 @@
 			</script>
 
 			<!-- Your customer chat code -->
-			<div class="fb-customerchat" attribution=setup_tool page_id="106008288957042" greeting_dialog_display="hide">
+			<div class="fb-customerchat" attribution="setup_tool" page_id="106008288957042" greeting_dialog_display="hide">
 			</div>
 
 
