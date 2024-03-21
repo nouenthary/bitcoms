@@ -36,7 +36,7 @@
 	<!-- Style css -->
 	<link class="main-css" href="<?php echo asset('css/style.css') ?>" rel="stylesheet">
 	<style>
-		.my-bagge{
+		.my-bagge {
 			position: absolute;
 			margin: 34px;
 		}
@@ -1583,71 +1583,154 @@
 
 
 		<div class="view-content">
-			@yield('content')
-		</div>
 
-		<!--**********************************
+
+
+			@yield('content')
+
+
+			<!-- <div class="fb-send-to-messenger" messenger_app_id="560926601260763" page_id="106008288957042" data-ref="560926601260763"  color="blue" size="large">
+			</div>
+
+			<hr>
+			<p>
+				When it is clicked a unique Facebook Messenger Id will be created for the customer and your page and automatically
+				sent to
+				Dotdigital Omnichannel where a <b>fbMessengerId</b> field will be added to the profile you indicated using the
+				<b>data-ref</b>
+				field on the Send to Messenger control. You can now move onto the Facebook Messenger send message quick starts and
+				send messages
+				to the opted in profile <b>{{ 1  }}</b>
+			</p>
+
+			<div id="testButtons" style="display: none;">
+				<hr>
+				<p>Use the test buttons below to send test messages to Facebook</p>
+				<form id="buttonForm" method="POST">
+					<button name="Button" value="simple">Send Simple Test Message</button>
+					<button name="Button" value="rich">Send Rich Test Message</button>
+				</form>
+				<hr>
+			</div>
+
+		</div> -->
+
+
+			<div id="fb-root"></div>
+
+			<div id="fb-customer-chat" class="fb-customerchat"></div>
+
+			<script>
+				var chatbox = document.getElementById('fb-customer-chat');
+				chatbox.setAttribute("page_id", "106008288957042");
+				chatbox.setAttribute("attribution", "biz_inbox");
+			</script>
+
+
+			<script>
+				window.fbAsyncInit = function() {
+					FB.init({
+						xfbml: true,
+						version: "v2.6"
+					});
+				};
+
+				(function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) return;
+					js = d.createElement(s);
+					js.id = id;
+					js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script>
+
+			<!--**********************************
             Footer start
         ***********************************-->
 
-		@yield('footer')
+			@yield('footer')
 
-		<!--**********************************
+			<!--**********************************
             Footer end
         ***********************************-->
 
-		<!--**********************************
+			<!--**********************************
            Support ticket button start
         ***********************************-->
 
-		<!--**********************************
+			<!--**********************************
            Support ticket button end
         ***********************************-->
 
 
-	</div>
-	<!--**********************************
+		</div>
+		<!--**********************************
         Main wrapper end
     ***********************************-->
 
-	<!--**********************************
+		<!--**********************************
         Scripts
     ***********************************-->
-	<!-- Required vendors -->
-	<script src="<?php echo asset('vendor/global/global.min.js') ?>"></script>
-	<script src="<?php echo asset('vendor/bootstrap-select/dist/js/bootstrap-select.min.js') ?>"></script>
+		<!-- Required vendors -->
+		<script src="<?php echo asset('vendor/global/global.min.js') ?>"></script>
+		<script src="<?php echo asset('vendor/bootstrap-select/dist/js/bootstrap-select.min.js') ?>"></script>
 
-	<!-- Apex Chart -->
-	<!-- <script src="<?php echo asset('vendor/apexchart/apexchart.js') ?>"></script> -->
-	<!-- <script src="<?php echo asset('vendor/chart-js/chart.bundle.min.js') ?>"></script> -->
+		<!-- Apex Chart -->
+		<!-- <script src="<?php echo asset('vendor/apexchart/apexchart.js') ?>"></script> -->
+		<!-- <script src="<?php echo asset('vendor/chart-js/chart.bundle.min.js') ?>"></script> -->
 
-	<!-- counter -->
-	<script src="<?php echo asset('vendor/counter/counter.min.js') ?>"></script>
-	<script src="<?php echo asset('vendor/counter/waypoint.min.js') ?>"></script>
+		<!-- counter -->
+		<script src="<?php echo asset('vendor/counter/counter.min.js') ?>"></script>
+		<script src="<?php echo asset('vendor/counter/waypoint.min.js') ?>"></script>
 
-	<!-- Chart piety plugin files -->
-	<!-- <script src="<?php echo asset('vendor/peity/jquery.peity.min.js') ?>"></script> -->
-	<!-- <script src="<?php echo asset('vendor/swiper/js/swiper-bundle.min.js') ?>"></script> -->
+		<!-- Chart piety plugin files -->
+		<!-- <script src="<?php echo asset('vendor/peity/jquery.peity.min.js') ?>"></script> -->
+		<!-- <script src="<?php echo asset('vendor/swiper/js/swiper-bundle.min.js') ?>"></script> -->
 
-	<!-- Dashboard 1 -->
-	<!-- <script src="<?php echo asset('js/dashboard/dashboard-1.js') ?>"></script> -->
-	<script src="<?php echo asset('js/custom.min.js') ?>"></script>
-	<script src="<?php echo asset('js/dlabnav-init.js') ?>"></script>
-	<script src="<?php echo asset('js/demo.js') ?>"></script>
-	<script src="<?php echo asset('js/styleSwitcher.js') ?>"></script>
-	<script>
-		jQuery(document).ready(function() {
+		<!-- Dashboard 1 -->
+		<!-- <script src="<?php echo asset('js/dashboard/dashboard-1.js') ?>"></script> -->
+		<script src="<?php echo asset('js/custom.min.js') ?>"></script>
+		<script src="<?php echo asset('js/dlabnav-init.js') ?>"></script>
+		<script src="<?php echo asset('js/demo.js') ?>"></script>
+		<script src="<?php echo asset('js/styleSwitcher.js') ?>"></script>
+		<script>
+			// window.fbAsyncInit = function() {
+			// 	FB.init({
+			// 		appId: '336037380081042',
+			// 		cookie: true,
+			// 		xfbml: true,
+			// 		version: "v2.6"
+			// 	});
 
-			setTimeout(function() {
-				dlabSettingsOptions.version = 'light';
-				new dlabSettings(dlabSettingsOptions);
-				setCookie('version', 'light');
-			}, 1500)
-		});
-	</script>
-	<script src="<?php echo asset('thary/notification/notification.js') ?>"></script>
-	<script src="{{ asset('vendor/moment/moment.min.js')}}"></script>
-	@yield('scripts')
+			// 	FB.AppEvents.logPageView();
+
+			// };
+
+			// (function(d, s, id) {
+			// 	var js, fjs = d.getElementsByTagName(s)[0];
+			// 	if (d.getElementById(id)) {
+			// 		return;
+			// 	}
+			// 	js = d.createElement(s);
+			// 	js.id = id;
+			// 	js.src = "https://connect.facebook.net/en_US/sdk.js";
+			// 	fjs.parentNode.insertBefore(js, fjs);
+			// }(document, 'script', 'facebook-jssdk'));
+
+			//
+
+			jQuery(document).ready(function() {
+				setTimeout(function() {
+					dlabSettingsOptions.version = 'light';
+					new dlabSettings(dlabSettingsOptions);
+					setCookie('version', 'light');
+				}, 1500)
+			});
+		</script>
+		<script src="<?php echo asset('thary/notification/notification.js') ?>"></script>
+		<script src="{{ asset('vendor/moment/moment.min.js')}}"></script>
+		@yield('scripts')
 </body>
 
 <!-- Mirrored from jiade.dexignlab.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Feb 2024 05:22:01 GMT -->

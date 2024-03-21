@@ -22,31 +22,35 @@
     <body style="margin: 0px">
         <div id="tv_chart_container"></div>
 
+        <div>
+            Hello world Test
+        </div>
+
         <script>
-            function initOnReady() {
-                var widget = (window.tvWidget = new TradingView.widget({
-                    library_path:
-                        "https://charting-library.tradingview-widget.com/charting_library/",
-                    // debug: true, // uncomment this line to see Library errors and warnings in the console
-                    fullscreen: true,
-                    symbol: "AAPL",
-                    interval: "1D",
-                    container: "tv_chart_container",
-                    datafeed: new Datafeeds.UDFCompatibleDatafeed(
-                        "https://demo-feed-data.tradingview.com"
-                    ),
-                    locale: "en",
-                    disabled_features: [],
-                    enabled_features: [],
-                }));
+            // function initOnReady() {
+            //     var widget = (window.tvWidget = new TradingView.widget({
+            //         library_path:
+            //             "https://charting-library.tradingview-widget.com/charting_library/",
+            //         // debug: true, // uncomment this line to see Library errors and warnings in the console
+            //         fullscreen: true,
+            //         symbol: "AAPL",
+            //         interval: "1D",
+            //         container: "tv_chart_container",
+            //         datafeed: new Datafeeds.UDFCompatibleDatafeed(
+            //             "https://demo-feed-data.tradingview.com"
+            //         ),
+            //         locale: "en",
+            //         disabled_features: [],
+            //         enabled_features: [],
+            //     }));
 
-                // widget.setSymbol("IBM", "1D", () => {
-                //     // Your callback function
-                //     alert(1);
-                // });
-            }
+            //     // widget.setSymbol("IBM", "1D", () => {
+            //     //     // Your callback function
+            //     //     alert(1);
+            //     // });
+            // }
 
-            window.addEventListener("DOMContentLoaded", initOnReady, false);
+            // window.addEventListener("DOMContentLoaded", initOnReady, false);
         </script>
     </body>
 </html>
