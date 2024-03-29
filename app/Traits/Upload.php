@@ -24,7 +24,6 @@ trait Upload
         Storage::disk($disk)->delete($path);
     }
 
-
     public function UploadFileImage(Request $request, $path = 'dev')
     {
         if ($request->hasFile('file')) {
@@ -67,6 +66,18 @@ trait Upload
             $prefixName = date('YmdHms');
             $qrimage = $path . '/' . $prefixName . '.' . $request->logo->extension();
             $request->logo->move(public_path('logo'), $qrimage);
+            return $qrimage;
+        }
+        return '';
+    }
+
+
+    public function UploadFilePDF(Request $request, $path = 'dev')
+    {
+        if ($request->hasFile('file')) {
+            $prefixName = date('YmdHms');
+            $qrimage = $path . '/' . $prefixName . '.' . $request->image_path->extension();
+            $request->image_path->move(public_path('privacy'), $qrimage);
             return $qrimage;
         }
         return '';

@@ -71,8 +71,8 @@ public function viewPageTransactionAdmin()
             }
 
             if (AuthManager::isAdmin() == false) {
-                $ownerCode = auth()->user()->invitationcode;
-                $post->where('users.referrercode', $ownerCode);
+                //$ownerCode = auth()->user()->invitationcode;
+                //$post->where('users.referrercode', $ownerCode);
 
                 if ($request->get('user') == true) {
                     $post->where('tbltrde.fkuserid', AuthManager::getAuthId());
