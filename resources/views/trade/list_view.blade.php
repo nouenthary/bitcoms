@@ -20,17 +20,7 @@
                             <option value="win">win</option>
                             <option value="lose">lose</option>
                         </select>
-                        {{--
-                        <select class="form-control custom-image-select-2 style-2 image-select mt-3 mt-sm-0 bit">
-                            <option data-thumbnail="images/svg/btc.svg"
-                                data-content="<img src='images/svg/btc.svg'/> Bitcoin">Bitcoin</option>
-                            <option data-thumbnail="images/svg/dash.svg"
-                                data-content="<img src='images/svg/dash.svg'/> Dash Coin">Dash Coin</option>
-                            <option data-thumbnail="images/svg/btc.svg"
-                                data-content="<img src='images/svg/btc.svg'/> Ripple">Ripple</option>
-                            <option data-thumbnail="images/svg/eth.svg"
-                                data-content="<img src='images/svg/eth.svg'/> Ethereum">Ethereum</option>
-                        </select> --}}
+                      
 
 
                     </div>

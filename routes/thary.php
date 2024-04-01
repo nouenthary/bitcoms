@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DepositConfirmationController;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\FeeController;
 use App\Http\Controllers\MainConfirmationController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TradeController;
 use App\Http\Controllers\TransferCoinController;
@@ -84,5 +86,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('get-withdraw-confirmations', [WithdrawConfirmationController::class, 'get_withdraw_confirmations']);
     Route::get('count-withdraw-confirmations', [WithdrawConfirmationController::class, 'count_withdraw_confirmations']);
     Route::post('post-withdraw-confirmations', [WithdrawConfirmationController::class, 'post_withdraw_confirmation']);
+    // privacy
+    Route::resource('privacy-page', PrivacyController::class);
+    // contact us 
+    Route::get('contact-us', [ContactUsController::class, 'contact_us']);
 });
 // thary task

@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\Auth\AuthManager;
 use App\Models\Deposit;
+use App\Models\Fee;
 use App\Models\Wallet;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -54,7 +55,7 @@ class DepositService
                     'tblwallet.createdate as wallet_createdate',
 
                     'users.name',
-                    'users.image',       
+                    'users.image',
                 );
 
             if (AuthManager::isAdmin() == false) {
@@ -122,8 +123,8 @@ class DepositService
                     'tblwallet.createtime as wallet_createtime',
                     'tblwallet.createdate as wallet_createdate',
 
-                    'users.name',               
-                    'users.image',               
+                    'users.name',
+                    'users.image',
                 );
 
             if ($request->get('status') != '') {
@@ -209,13 +210,21 @@ class DepositService
             //return response()->json(['message' => 'Please contact to admin ...', 'status' => false ], 422);
         }
 
-        $payment_voucher  = $this->UploadFileVoucher($request, 'payment_voucher');
+        $payment_voucher = $this->UploadFileVoucher($request, 'payment_voucher');
 
         // if ($request->hasFile('file')) {
         //     $payment_voucher = $this->UploadFile($request->file('paymentvoucher'), 'payment_voucher');
         // }
         //  return $payment_voucher;
 
+        $fee = 0;
+
+        $tblFee = Fee::where('feeid', '>', 0)->first();
+
+        if ($tblFee != null) {
+            $fee = $tblFee->deposit_fee_percent ?? 0;
+        }
+ 
         Deposit::create([
             'depositid' => 0,
             'fkuserid' => AuthManager::getAuthId(),
@@ -230,7 +239,9 @@ class DepositService
             'dateupdate' => AuthManager::get_date(),
             'userconfirmid' => null,
             'confirmtime' => null,
-            'confirmdate' => null
+            'confirmdate' => null,
+            'percent_fee' => $fee,
+            'total_fee' => $request->get('amount') * $fee / 100,
         ]);
 
         return response()->json([

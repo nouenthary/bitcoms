@@ -1146,7 +1146,7 @@
 								<span class="nav-text">Trading</span>
 							</a>
 							<ul aria-expanded="false">
-								<li><a class="a-link" href="{{url('wallet-title-page')}}">Wallet title</a></li>
+								
 								<li><a class="a-link" href="{{url('wallet-page')}}">Wallet for deposit</a></li>
 								<li><a class="a-link" href="{{url('deposit-page')}}">Deposit transactions</a></li>
 								<li><a class="a-link" href="{{url('withdrawal-page')}}">Withdraw</a></li>
@@ -1154,6 +1154,8 @@
 								<li><a class="a-link" href="{{url('trade-page')}}">Future Trading</a></li>
 								<li><a class="a-link" href="{{url('trade-page-transaction')}}">Trading Transactions</a></li>
 								<li><a class="a-link" href="{{url('user-invite-page')}}">User Invitation</a></li>
+								<li><a class="a-link" href="{{url('privacy-page?page=view')}}">Privacy </a></li>
+								<li><a class="a-link" href="{{url('contact-us')}}">Contact Us </a></li>
 							</ul>
 						</li>
 						<li><a class="has-arrow ai-icon" href="javascript:void(0);" aria-expanded="false">
@@ -1161,10 +1163,12 @@
 								<span class="nav-text">Admin Setting</span>
 							</a>
 							<ul aria-expanded="false">
+								<li><a class="a-link" href="{{url('wallet-title-page')}}">Wallet title</a></li>
 								<li><a class="a-link" href="{{url('transfer-coin-page-admin')}}">Transfer coins</a></li>
 								<li><a class="a-link" href="{{url('trade-page-transaction-admin')}}">Trading Transactions</a></li>
 								<li><a class="a-link" href="{{url('user-invite-page-admin')}}">User Invitation</a></li>
 								<li><a class="a-link" href="{{url('main-confirmation')}}">Confirmation</a></li>
+								<!-- <li><a class="a-link" href="{{url('privacy-page?page=page')}}">Privacy </a></li> -->
 								<li><a class="a-link" href="{{url('fee-setting')}}">Setting</a></li>
 							</ul>
 						</li>

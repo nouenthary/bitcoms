@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Deposit extends Model
 {
-    protected $table =  'tbldeposit';
+    protected $table = 'tbldeposit';
 
     protected $fillable = [
         'depositid',
@@ -25,6 +25,8 @@ class Deposit extends Model
         'userconfirmid',
         'confirmtime',
         'confirmdate',
+        'percent_fee',
+        'total_fee'
     ];
 
     public $timestamps = false;

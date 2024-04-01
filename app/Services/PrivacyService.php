@@ -49,13 +49,23 @@ class PrivacyService
                 $privacy,
             ]);
         }
+
+
+        $user = DB::table('users')->where('id' , AuthManager::getAuthId())->first();
+       
+        $language = 'en';
+
+        if ($user != null) {
+           $language = $user->language;
+        }
+
         if ($request->get('page') == 'view') {
-            return view('privacy.show');
+            return view('privacy.show', compact('language'));
         }
         if (AuthManager::isAdmin() == false) {
-            return view('privacy.show');
+            return view('privacy.show', compact('language'));
         }
-        return view('privacy.index');
+        return view('privacy.index', compact('language'));
     }
 
     use Upload;

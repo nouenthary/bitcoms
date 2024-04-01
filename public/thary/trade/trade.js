@@ -169,6 +169,14 @@ $(function () {
 
     //
     function buttonBuy(type) {
+        let trade_status = $("#trade-status").val();
+
+        if (trade_status.toLowerCase() !== "done") {
+            errorMessage("Please complete docuement", "");
+            return;
+        }
+        //
+
         $("#feepercent").val(0);
         $("#feeamount").val(0);
         $("#totalamount").val(0);
@@ -319,9 +327,20 @@ $(function () {
         let amount = $("#amount").val();
         let balance = $(".text-balance:first").text();
 
-        if (amount === "" || amount <= 0) {
+        if (amount === "") {
             errorMessage("Please enter lot size ...", "Warning Message");
             $("#amount").focus();
+            return;
+        }
+
+        if (balance == 0) {
+            errorMessage("lot size " + balance + " ...", "Warning Message");
+            $("#amount").focus();
+
+            setTimeout(function () {
+                location.href = "/wallet-page";
+            }, 2000);
+
             return;
         }
 

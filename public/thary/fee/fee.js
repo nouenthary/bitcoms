@@ -13,14 +13,27 @@ $(function () {
             type: "get",
             url: url,
             success: function (response) {
-                let { fee, company } = response;
-
-                $("#tradeffeepercent").val(fee[0].tradeffeepercent);
-                $("#widtrwfeepercent").val(fee[0].widtrwfeepercent);
+                let { fee, company, contact_us, privacy } = response;
+                console.log(contact_us);
+                // fee
+                let { tradeffeepercent, widtrwfeepercent } = fee[0];
+                $("#tradeffeepercent").val(tradeffeepercent);
+                $("#widtrwfeepercent").val(widtrwfeepercent);
+                // company
                 $("#nameweb").val(company[0].nameweb);
                 if (company[0].logo != null) {
                     $(".view-logo").attr("src", company[0].logo);
                 }
+                // contact us
+                let { phone, address, email, coutry, Description, city } =
+                    contact_us[0];
+                $("#phone").val(phone);
+                $("#address").val(address);
+                $("#email").val(email);
+                $("#coutry").val(coutry);
+                $("#Description").val(Description);
+                $("#city").val(city);
+                // privacy
             },
             error: function (xhr) {
                 console.log(JSON.stringify(xhr.responseText));
@@ -59,9 +72,9 @@ $(function () {
 
         var data = new FormData(jQuery("form")[0]);
 
-        jQuery.each(jQuery("#logo")[0].files, function (i, file) {
-            data.append("file[]", file);
-        });
+        data.append("file", $("#logo")[0].files[0]);
+
+        //data.append("en", $("#en")[0].files[0]);
 
         $("#btn-create").attr("disabled", "");
 

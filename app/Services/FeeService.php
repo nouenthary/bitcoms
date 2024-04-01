@@ -90,10 +90,12 @@ class FeeService
         // Create or update Fee
         $fee = Fee::where('feeid', '>', '0')->first();
         $model = [
-            'tradeffeepercent' => $request->get('tradeffeepercent'),
-            'widtrwfeepercent' => $request->get('widtrwfeepercent'),
+            'tradeffeepercent' => $request->get('tradeffeepercent') ?? 0,
+            'widtrwfeepercent' => $request->get('widtrwfeepercent') ?? 0,
             'timeupdate' => AuthManager::get_time(),
-            'dateupdate' => AuthManager::get_date()
+            'dateupdate' => AuthManager::get_date(),
+            'deposit_fee_percent' => $request->get('deposit_fee_percent') ?? 0,
+            'profit_fee_percentage' => $request->get('profit_fee_percentage') ?? 0,
         ];
         if ($fee == null) {
             $model['feeid'] = 0;
