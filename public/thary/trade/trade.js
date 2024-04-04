@@ -107,7 +107,7 @@ $(function () {
                 .find(".v-percent")
                 .text(
                     parseFloat(value.price_change_percentage_24h).toFixed(2) +
-                        " %"
+                    " %"
                 );
 
             $element.attr("data-json", JSON.stringify(value));

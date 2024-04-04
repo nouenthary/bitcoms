@@ -827,78 +827,71 @@
 
 								<a href="javascript:void(0)" class="badge badge-circle badge-danger my-bagge">0</a>
 
+
 								<div class="dropdown-menu dropdown-menu-end of-visible">
 									<div id="DZ_W_Notification3" class="widget-media dlab-scroll p-3" style="height:380px;">
 
 										<ul class="timeline main-list-alert">
 
-											<li class="list-alert" style="cursor: pointer;">
-												<div class="timeline-panel">
-													<div class="media me-2">
-														<img alt="image" class="l-image" width="50" src="images/avatar/1.jpg">
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1 l-name">Dr sultads Send you Photo</h6>
-														<small class="d-block l-date">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
+                                            <!--  block
 
-											<!-- <li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-info">
-														KG
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Resport created successfully</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-success">
-														<i class="fa fa-home"></i>
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Reminder : Treatment Time!</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2">
-														<img alt="image" width="50" src="images/avatar/1.jpg">
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Dr sultads Send you Photo</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-danger">
-														KG
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Resport created successfully</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="timeline-panel">
-													<div class="media me-2 media-primary">
-														<i class="fa fa-home"></i>
-													</div>
-													<div class="media-body">
-														<h6 class="mb-1">Reminder : Treatment Time!</h6>
-														<small class="d-block">29 July 2020 - 02:26 PM</small>
-													</div>
-												</div>
-											</li> -->
+                                             block  -->
+
+                                              <!-- <li>
+                                                  <div class="timeline-panel">
+                                                      <div class="media me-2 media-info">
+                                                          KG
+                                                      </div>
+                                                      <div class="media-body">
+                                                          <h6 class="mb-1">Resport created successfully</h6>
+                                                          <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                              <li>
+                                                  <div class="timeline-panel">
+                                                      <div class="media me-2 media-success">
+                                                          <i class="fa fa-home"></i>
+                                                      </div>
+                                                      <div class="media-body">
+                                                          <h6 class="mb-1">Reminder : Treatment Time!</h6>
+                                                          <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                              <li>
+                                                  <div class="timeline-panel">
+                                                      <div class="media me-2">
+                                                          <img alt="image" width="50" src="images/avatar/1.jpg">
+                                                      </div>
+                                                      <div class="media-body">
+                                                          <h6 class="mb-1">Dr sultads Send you Photo</h6>
+                                                          <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                              <li>
+                                                  <div class="timeline-panel">
+                                                      <div class="media me-2 media-danger">
+                                                          KG
+                                                      </div>
+                                                      <div class="media-body">
+                                                          <h6 class="mb-1">Resport created successfully</h6>
+                                                          <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                              <li>
+                                                  <div class="timeline-panel">
+                                                      <div class="media me-2 media-primary">
+                                                          <i class="fa fa-home"></i>
+                                                      </div>
+                                                      <div class="media-body">
+                                                          <h6 class="mb-1">Reminder : Treatment Time!</h6>
+                                                          <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                      </div>
+                                                  </div>
+                                              </li> -->
 										</ul>
 									</div>
 									<a class="all-notification" href="javascript:void(0);">See all notifications <i class="ti-arrow-end"></i></a>
@@ -1146,7 +1139,7 @@
 								<span class="nav-text">Trading</span>
 							</a>
 							<ul aria-expanded="false">
-								
+
 								<li><a class="a-link" href="{{url('wallet-page')}}">Wallet for deposit</a></li>
 								<li><a class="a-link" href="{{url('deposit-page')}}">Deposit transactions</a></li>
 								<li><a class="a-link" href="{{url('withdrawal-page')}}">Withdraw</a></li>
@@ -1593,7 +1586,7 @@
 			@yield('content')
 
 
-			<div id="fb-root"></div>
+			{{-- <div id="fb-root"></div>
 
 			<div id="fb-customer-chat" class="fb-customerchat"></div>
 
@@ -1620,7 +1613,7 @@
 					js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
 					fjs.parentNode.insertBefore(js, fjs);
 				}(document, 'script', 'facebook-jssdk'));
-			</script>
+			</script> --}}
 
 			<!--**********************************
             Footer start

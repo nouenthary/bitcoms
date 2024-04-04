@@ -5,33 +5,21 @@ $(function () {
         },
     });
 
+    // card alert
     function cardAlert(item) {
-        let { index, id, type, image, date, name } = item;
+        let {index, id, type, image, date, name} = item;
         return (
-            `<li class="list-alert" style="cursor: pointer;" data-id="` +
-            id +
-            `" data-type="` +
-            type +
-            `" data-index="` +
-            index +
-            `">
-            <div class="timeline-panel">
-                <div class="media me-2">
-                    <img alt="image" class="l-image" width="50" src="` +
-            image +
-            `">
-                </div>
-                <div class="media-body">
-                    <h6 class="mb-1 l-name">` +
-            name +
-            " add " +
-            type`</h6>
-                    <small class="d-block l-date">` +
-            date +
-            `</small>
-                </div>
-            </div>
-        </li>`
+            '<li class="list-alert" style="cursor: pointer;" data-id="' + id + '" data-index="' + index + '" data-type="' + type + '" >' +
+            '<div class="timeline-panel">' +
+            '<div class="media me-2">' +
+            '<img alt="image" class="l-image" width="50" src="' + image + '">' +
+            '</div>' +
+            '<div class="media-body">' +
+            '<h6 class="mb-1 l-name">' + name + '</h6>' +
+            '<small class="d-block l-date">' + date + '</small>' +
+            '</div>' +
+            '</div>' +
+            '</li>'
         );
     }
 
@@ -54,6 +42,7 @@ $(function () {
                         );
                     });
 
+                    $(".main-list-alert").empty();
                     $.each(data, function (key, value) {
                         // let $element = $(".list-alert:first").clone(true);
                         // $element.attr("data-id", value.id);
@@ -66,19 +55,20 @@ $(function () {
                         let date = moment(value.date + " " + value.time).format(
                             "DD MMMM YYYY - HH:mm A"
                         );
-                        // $element.find(".l-date").text(date);
-                        // $(".main-list-alert").append($element);
+                        //$element.find(".l-date").text(date);
+                        //$(".main-list-alert").append($element);
 
-                        let json = {
+                        let item = {
                             index: key,
                             id: value.id,
                             type: value.type,
                             image: value.image,
-                            data: date,
-                            name: value.name,
+                            date: date,
+                            name: value.name + " was added " + value.type
                         };
 
-                        $(".main-list-alert").append(cardAlert(json));
+                        $(".main-list-alert").append(cardAlert(item));
+
                     });
                     //$(".list-alert:first").remove();
                     $(".my-bagge").text(data.length);
@@ -93,9 +83,9 @@ $(function () {
     getData();
     setInterval(function () {
         getData();
-    }, 5000);
+    }, 10000);
 
-    //
+    // link by alert
     $(document).on("click", ".list-alert", function () {
         let id = $(this).attr("data-id");
         let type = $(this).attr("data-type");
@@ -113,4 +103,11 @@ $(function () {
         localStorage.setItem("index", index);
         location.href = "/main-confirmation";
     });
+
+    // error image src
+    let src = "https://z-p3-scontent.fpnh5-4.fna.fbcdn.net/v/t39.30808-1/305269291_207815158260505_7760767745558482299_n.png?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGSOMOIHopK-sA8KO7Ed9FWLbdGNu7_5jktt0Y27v_mOTDla7s48YMTIS2hoDRxSs9164-d64q6M7OW8H21X24A&_nc_ohc=MPvi3SWpbfEAX-wfS6p&_nc_ht=z-p3-scontent.fpnh5-4.fna&oh=00_AfDx-iU0ERWg_JGv1d7qSDkW9r_M-OPK0Lm7AsnsG5FPpw&oe=660FFCE8";
+    $("img").on("error", function () {
+        $(this).attr("src", src);
+    });
+
 });

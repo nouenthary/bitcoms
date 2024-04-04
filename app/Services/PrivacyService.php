@@ -52,10 +52,10 @@ class PrivacyService
 
 
         $user = DB::table('users')->where('id' , AuthManager::getAuthId())->first();
-       
+
         $language = 'en';
 
-        if ($user != null) {
+        if ($user != null && $user->language != null) {
            $language = $user->language;
         }
 

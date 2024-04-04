@@ -581,4 +581,6 @@ $(function () {
         $("#wallet_title_id").val($(this).attr("id"));
         table.draw();
     });
+
+    //
 });

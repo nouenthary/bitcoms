@@ -64,7 +64,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('get-trade', [TradeController::class, 'index']);
     Route::get('trade-page-transaction', [TradeController::class, 'page_trade_transaction']);
     Route::get('trade-page-transaction-admin', [TradeController::class, 'page_trade_transaction_admin']);
-    // users invitation codes 
+    Route::get('get_trading_by_user', [TradeController::class, 'get_trading_by_user']);
+    // users invitation codes
     Route::post('get-user-invite', [UserInviteController::class, 'index']);
     Route::get('user-invite-page', [UserInviteController::class, 'page_user_invite']);
     Route::get('user-invite-page-admin', [UserInviteController::class, 'page_user_invite_admin']);
@@ -88,7 +89,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('post-withdraw-confirmations', [WithdrawConfirmationController::class, 'post_withdraw_confirmation']);
     // privacy
     Route::resource('privacy-page', PrivacyController::class);
-    // contact us 
+    // contact us
     Route::get('contact-us', [ContactUsController::class, 'contact_us']);
 });
 // thary task

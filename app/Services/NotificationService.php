@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\DB;
  */
 class NotificationService
 {
-    // get list 
+    // get list
     public function getNotifications(Request $request)
     {
         if (AuthManager::isAdmin() == false) {
@@ -25,6 +25,8 @@ class NotificationService
                 array()
             ]);
         }
+
+        $limit = 200;
 
         $users = User::where('status', 'like', 'review')
             ->select(
@@ -36,7 +38,7 @@ class NotificationService
                 'dateupdate as date',
                 DB::raw('(select "Register") as type')
             )
-            ->take(500)
+            ->take($limit)
             ->orderByDesc('id')
             ->get();
 
@@ -51,7 +53,7 @@ class NotificationService
                 'tblwidtraw.createdate  as date',
                 DB::raw('(select "Withdraw") as type')
             )
-            ->take(500)
+            ->take($limit)
             ->orderByDesc('id')
             ->get();
 
@@ -66,7 +68,7 @@ class NotificationService
                 'tbldeposit.dateupdate  as date',
                 DB::raw('(select "Deposit") as type')
             )
-            ->take(500)
+            ->take($limit)
             ->orderByDesc('id')
             ->get();
 

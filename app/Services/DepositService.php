@@ -224,7 +224,7 @@ class DepositService
         if ($tblFee != null) {
             $fee = $tblFee->deposit_fee_percent ?? 0;
         }
- 
+
         Deposit::create([
             'depositid' => 0,
             'fkuserid' => AuthManager::getAuthId(),

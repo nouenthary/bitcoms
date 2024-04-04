@@ -25,12 +25,13 @@ class TradeService
     public function viewPageTransaction()
     {
         $permission = AuthManager::isAdmin();
-        return view('trade.trade_transaction', compact('permission'));
+        return view('trade.trade_transaction_card', compact('permission'));
     }
-public function viewPageTransactionAdmin()
+
+    public function viewPageTransactionAdmin()
     {
         $permission = AuthManager::isAdmin();
-        
+
         if (AuthManager::isAdmin() == false) {
             return view('error.error');
         }

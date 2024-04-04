@@ -7,7 +7,7 @@
 
     <!--**********************************
                                                                                         Content body start
-                                                                                ***********************************-->
+                                                                               ***********************************-->
 
     <div class="content-body">
         <div class="container-fluid">
@@ -15,7 +15,7 @@
             <div class="row ">
 
 
-                <input type="hidden" name="trade-status" id="trade-status" value="{{ Auth::user()->status }}" />
+                <input type="hidden" name="trade-status" id="trade-status" value="{{ Auth::user()->status }}"/>
 
 
                 <div class="col-xl-12">
@@ -28,17 +28,17 @@
                                 <div class="d-flex align-items-center coin-box">
 
                                     <button class="btn btn-outline-secondary mb-1 btn-show-currency" data-toggle="modal"
-                                        data-target="#modal-show-currcency">
+                                            data-target="#modal-show-currcency">
                                         <i class="fa fa-bars"></i>
                                     </button>
 
                                     <div style="width: 10px"></div>
 
                                     <span>
-                                        <img style="display: none;" class="v-logo-view" height="30px" width="30px"
-                                            src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1696501400"
-                                            alt="">
-                                    </span>
+                                    <img style="display: none;" class="v-logo-view" height="30px" width="30px"
+                                         src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1696501400"
+                                         alt="">
+                                </span>
                                     <div class="ms-3" style="display: none;">
                                         <span class="fs-14 font-w400 d-name">Bitcoin</span>
                                         <a href="javascript:void(0);">
@@ -51,7 +51,8 @@
                                 <div class="coin-box" style="display: none;">
                                     <span class="mb-1 d-block">Mark Price</span>
                                     <div class="d-flex align-items-center">
-                                        <h5 class="font-w600 m-0 d-currcent-price text-success text-current-price">0,00</h5>
+                                        <h5 class="font-w600 m-0 d-currcent-price text-success text-current-price">
+                                            0,00</h5>
                                         <span class="text-danger ms-2 d-current-price-percent">0%</span>
                                     </div>
                                 </div>
@@ -79,26 +80,23 @@
                             <div class="row mt-2">
                                 <div class="col-sm-6">
                                     <button class="btn btn-danger btn-block btn-buy-less btn-sm">
-                                        <span id="t-buy-less">
-                                            0,00
-                                        </span> <br>
+                                    <span id="t-buy-less">
+                                        0,00
+                                    </span> <br>
                                         Buy less
                                     </button>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <button class="btn btn-success btn-block btn-buy-more btn-sm">
-                                        <span id="t-buy-more">
-                                            0,00
-                                        </span> <br>
+                                    <span id="t-buy-more">
+                                        0,00
+                                    </span> <br>
                                         Buy more
                                     </button>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                @include('trade.box-trade-view')
-                            </div>
 
                         </div>
 
@@ -107,9 +105,9 @@
             </div>
 
 
-            <div style="display: none;">
-                @include('trade.list_view')
-            </div>
+            {{--    load url --}}
+{{--            <div class="box-trade-view"></div>--}}
+            {{--    load url --}}
 
 
         </div>
